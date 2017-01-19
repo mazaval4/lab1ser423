@@ -27,6 +27,7 @@ package com.example.mazaval4.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,7 +35,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        PlaceDescription p = new PlaceDescription();
+        EditText name = (EditText)findViewById(R.id.editText);
+        EditText des = (EditText)findViewById(R.id.editText2);
+        EditText category = (EditText)findViewById(R.id.editText3);
+        EditText addStreet = (EditText)findViewById(R.id.editText4);
+        EditText addTitle = (EditText)findViewById(R.id.editText5);
+        EditText longitude = (EditText)findViewById(R.id.editText6);
+        EditText elevation = (EditText)findViewById(R.id.editText7);
+        EditText latitude = (EditText)findViewById(R.id.editText8);
+
+        PlaceDescription p = new PlaceDescription(name.getText().toString(),des.getText().toString(),
+                category.getText().toString(),addStreet.getText().toString(),addTitle.getText().toString(),
+                elevation.getText().toString(),latitude.getText().toString(),longitude.getText().toString());
     }
 
     public class PlaceDescription
